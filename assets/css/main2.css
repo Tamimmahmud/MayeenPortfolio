@@ -1,0 +1,50 @@
+:root {
+  --fontColorWhite: #fcf7de;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: black; */
+  /* width: 80%; */
+  margin: auto;
+  padding: 2rem 3rem;
+  z-index: 2;
+}
+
+#logo img {
+  height: 5vh;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-links h2 {
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  color: var(--fontColorWhite);
+}
+
+.burger {
+  display: none;
+}
