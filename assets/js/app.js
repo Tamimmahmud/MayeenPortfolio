@@ -109,7 +109,7 @@ function navToggle(e) {
         gsap.to(".line1",0.5,{rotate : "45", y: "5", background: 'black'});
         gsap.to(".line2",0.5,{rotate: "-45",y: "-5", background: 'black'})
         gsap.to("#logo",1,{color:'black'});
-        gsap.to(".nav-bar", 1, {clipPath: "circle(2500px at 100% -10%)"})
+        gsap.to(".burger-nav-bar", 1, {clipPath: "circle(2500px at 100% -10%)"})
         document.body.classList.add('hide')
 
     }
@@ -118,7 +118,7 @@ function navToggle(e) {
         gsap.to(".line1",0.5,{rotate : "0", y: "0", background: 'white'});
         gsap.to(".line2",0.5,{rotate: "0",y: "0", background: 'white'});
         gsap.to("#logo",1,{color:'white'});
-        gsap.to(".nav-bar", 1, {clipPath: "circle(50px at 100% -10%)"}) 
+        gsap.to(".burger-nav-bar", 1, {clipPath: "circle(50px at 100% -10%)"}) 
         document.body.classList.remove('hide')
     }
     
@@ -131,18 +131,61 @@ function navToggle(e) {
 // window.addEventListener('mousemove', cursor);
 // window.addEventListener('mouseover', activeCursor);
 
+
+const homeHeight = document.querySelector('#home').clientHeight;
+const aboutHeight= document.querySelector('#about').clientHeight;
+const experienceHeight=  document.querySelector('#experience').clientHeight;;
+const skillsHeight= document.querySelector('#skills').clientHeight;;
+
+// INTERNAL NAVBAR Active class toggle on SCROLL
+function urlChange() {
+        // init controller
+	let controller = new ScrollMagic.Controller();
+
+	// build scenes
+	new ScrollMagic.Scene({
+        triggerElement: "#home",
+        duration:homeHeight})
+        // .removeClassToggle("#liAbout, #liExperience, #liSkills", "active")
+		.setClassToggle("#liHome", "active") // add class toggle			
+        // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	new ScrollMagic.Scene({
+        triggerElement: "#about",
+        duration:aboutHeight})
+        // .removeClassToggle("#liHome, #liExperience, #liSkills", "active")
+		.setClassToggle("#liAbout", "active") // add class toggle
+		// .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	new ScrollMagic.Scene({triggerElement: "#experience", duration:experienceHeight })
+	    // .removeClassToggle("#liHome, #liAbout, #liSkills", "active")				
+        .setClassToggle("#liExperience", "active") // add class toggle    
+        // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+	new ScrollMagic.Scene({triggerElement: "#skills",duration:skillsHeight})
+	    // .removeClassToggle("#liHome, #liExperience, #liAbout", "active")				
+        .setClassToggle("#liSkills", "active") // add class toggle
+        // .addIndicators() // add indicators (requires plugin)
+		.addTo(controller);
+    
+}
+
+urlChange()
+
 // HomePage SideNavbar active toggle
 
 const internal_navLinks = document.querySelectorAll('.internal_navigation .nav_home li')
 const navLink_a = document.querySelectorAll('.internal_navigation .nav_home li a')
 
 function navChange(e) {
-    const link = e.target;
-    const li = link.parentElement;
-    const internal_navLinks_active = document.querySelectorAll('.internal_navigation .nav_home .active')
-    internal_navLinks_active.forEach((navLink_active) => navLink_active.classList.remove('active'))
-    li.classList.toggle('active');
-    const sectionURL = link.dataset.section;
+    const internal_link = e.target;
+    const target_li = internal_link.parentElement;
+    console.log(target_li);
+    // const internal_navLinks_active = document.querySelectorAll('.internal_navigation .nav_home li')
+    // console.log(internal_navLinks_active);
+    // internal_navLinks.forEach((navLink) => navLink.classList.remove('active'))
+    // target_li.classList.toggle('active');
+    // const sectionURL = link.dataset.section;
     // history.pushState({},(''),sectionURL)
 }
 
@@ -150,7 +193,7 @@ navLink_a.forEach((link) => {
     link.addEventListener('click', navChange)
 })
 
-// NAVBAR translateY on Scroll Direction
+// TOP header translateY on Scroll Direction
 
 const header = document.querySelector('header');
 function checkScrollDirection(event) {
@@ -172,39 +215,32 @@ let scrollableElement = document.body;
 
 scrollableElement.addEventListener('wheel', checkScrollDirection);
 
-const homeHeight = document.querySelector('#home').clientHeight;
-const aboutHeight= document.querySelector('#about').clientHeight;
-const experienceHeight=  document.querySelector('#experience').clientHeight;;
-const skillsHeight= document.querySelector('#skills').clientHeight;;
 
 
-function urlChange() {
-        // init controller
-	let controller = new ScrollMagic.Controller();
 
-	// build scenes
-	new ScrollMagic.Scene({
-        triggerElement: "#home",
-        duration:homeHeight})
-					.setClassToggle("#liHome", "active") // add class toggle
-					// .addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
-	new ScrollMagic.Scene({
-        triggerElement: "#about",
-        duration:aboutHeight})
-					.setClassToggle("#liAbout", "active") // add class toggle
-					
-                    // .addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
-	new ScrollMagic.Scene({triggerElement: "#experience", duration:experienceHeight })
-					.setClassToggle("#liExperience", "active") // add class toggle
-					// .addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
-	new ScrollMagic.Scene({triggerElement: "#skills",duration:skillsHeight})
-					.setClassToggle("#liSkills", "active") // add class toggle
-					// .addIndicators() // add indicators (requires plugin)
-					.addTo(controller);
-    
-}
+function navToggle(e) {
+    if (!e.target.classList.contains("active")) {
+      e.target.classList.add("active");
+      gsap.to(".line1", 0.5, { rotate: "45", y: 6, background: "black" });
+      gsap.to(".line2", 0.5, { rotate: "-45", y: 0, background: "black" });
+      gsap.to("#logo", 1, { color: "black" });
+      gsap.to(".burger-nav-bar", 0.5, { clipPath: "circle(2500px at 100% -10%)" });
+      gsap.to('.internal_navigation',{transform: "translateY(100px)"});
+      document.querySelector('.content_social_fixed').classList.toggle('show')
+      document.querySelector('.content_social_fixed').classList.toggle('hide')
+      document.body.classList.add("hide");
+    } else {
+      e.target.classList.remove("active");
+      gsap.to(".line1", 0.5, { rotate: "0", y: 0, background: "white" });
+      gsap.to(".line2", 0.5, { rotate: "0", y: 0, background: "white" });
+      gsap.to("#logo", 1, { color: "white" });
+      gsap.to(".burger-nav-bar", 0.5, { clipPath: "circle(50px at 100% -10%)" });
+      gsap.to('.internal_navigation',{transform: "translateY(0px)"});
+      document.querySelector('.content_social_fixed').classList.toggle('show')
+      document.querySelector('.content_social_fixed').classList.toggle('hide')
+      document.body.classList.remove("hide");
+    }
+  }
 
-urlChange()
+  const burger = document.querySelector(".burger");
+  burger.addEventListener("click", navToggle);

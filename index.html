@@ -81,17 +81,15 @@
         <a href="javascript:void(0)" class="btn_arrow_up hide">Up</a>
     </nav>
     <section class="content_social_fixed show">
-        <article class="center_content">
-            <ul>
-                <li class="linkedin">
-                    <a href="https://www.linkedin.com/company/boronstudio/" title="Linkedin"
-                        target="_blank">Linkedin</a>
-                </li>
-                <li class="instagram">
-                    <a href="https://www.instagram.com/boronstudio/" title="Instagram" target="_blank">Instagram</a>
-                </li>
-            </ul>
-        </article>
+        <ul>
+            <li class="linkedin">
+                <a href="https://au.linkedin.com/in/mayeen-munthakim" title="Linkedin">Linkedin</a>
+            </li>
+            <li>
+                <div class="social_line"></div>
+            <li class="facebook">
+                <a href="https://www.facebook.com/mayeen.munthakim" title="Facebook">Facebook</a>
+            </li>
     </section>
     <main class="">
         <section class="slide banner " id="home">
@@ -324,7 +322,7 @@
                         </li>
                         <li>
                             <div class="logo-holder">
-                                <img src="./assets/images/LogoMailchimp.png" alt="">
+                                <img src="./assets/images/LogoMailChimp.png" alt="">
                             </div>
                             <div class="text-holder">
                                 <span>mailchimp</span>
@@ -373,6 +371,23 @@
         </section>
 
     </main>
+    <nav class="burger-nav-bar">
+        <div class="wrapper">
+            <ul class="burger-nav-links">
+                <h3>Projects</h3>
+                <h3>Photography</h3>
+            </ul>
+            <div class="contact">
+                <div class="social_icons">
+                    <img src="./assets/images/Logo_linkedIn_invert.svg" alt="">
+                    <img src="./assets/images/logo_FB_invert.svg" alt="">
+                </div>
+                <h2>get in touch.</h2>
+
+            </div>
+        </div>
+
+    </nav>
 
     <!-- Barba -->
     <script src="https://unpkg.com/@barba/core"></script>
@@ -416,7 +431,13 @@
     <script>
 
 
-        AOS.init();
+        AOS.init({
+            offset: 120, // offset (in px) from the original trigger point
+            delay: -50, // values from 0 to 3000, with step 50ms
+            duration: 700, // values from 0 to 3000, with step 50ms
+
+        });
+
     </script>
     <!-- app.js -->
     <script src="./assets/js/app.js"></script>

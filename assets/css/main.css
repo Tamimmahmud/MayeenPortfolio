@@ -63,11 +63,11 @@ header {
   margin: 2px;
   background-color: white;
   height: 2px;
-  width: 15px;
+  width: 25px;
   pointer-events: none;
 }
 .line2 {
-  width: 25px;
+  /* width: 25px; */
 }
 
 .internal_navigation {
@@ -263,7 +263,7 @@ header {
 
 /*Social*/
 .content_social_fixed {
-  width: calc(100vw - 175px);
+  width: calc(100vw);
   height: 100vh;
   position: fixed;
   right: 0;
@@ -271,8 +271,8 @@ header {
   z-index: 12;
   pointer-events: none;
   mix-blend-mode: difference;
-  transition: all 1s ease-in-out;
-  -webkit-transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
   will-change: opacity;
 }
 .content_social_fixed.hide {
@@ -287,10 +287,11 @@ header {
   height: 100vh;
   position: absolute;
   top: 0;
-  right: -50px;
+  right: 2vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  list-style-type: none;
 }
 
 .content_social_fixed ul li {
@@ -317,21 +318,22 @@ header {
   will-change: opacity;
 }
 
-.content_social_fixed ul li a:hover {
-  opacity: 1;
+.content_social_fixed ul li .social_line {
+  height: 1px;
+  width: 30px;
+  background-color: white;
+  opacity: 0.5;
 }
 
 .content_social_fixed ul li.linkedin a {
-  background-position: 0px -52px;
+  background-image: url(../images/Logo_linkedIn.png);
 }
-.content_social_fixed ul li.dribbble a {
-  background-position: 0px -91px;
+.content_social_fixed ul li.facebook a {
+  background-image: url(../images/logo_FB.png);
 }
-.content_social_fixed ul li.clutch a {
-  background-position: 0px -4px;
-}
-.content_social_fixed ul li.instagram a {
-  background-position: 0px -247px;
+
+.content_social_fixed ul li a:hover {
+  opacity: 1;
 }
 
 /*Animations*/
@@ -374,7 +376,7 @@ main {
 }
 section {
   /* min-height: 90vh; */
-  margin: 0 auto 0 auto;
+  margin: 1rem auto 1rem auto;
   width: 90%;
   color: white;
   transition: all ease 0.5s;
@@ -734,16 +736,90 @@ p.job-desc {
 .cursor span {
   pointer-events: none;
 }
+.burger-nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  opacity: 1;
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
+}
+.burger-nav-bar .wrapper {
+  width: 80%;
+  height: 80%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.burger {
+  cursor: pointer;
+}
+.burger-nav-links {
+  font-size: 2rem;
+  text-align: center;
+}
+.burger-nav-links h3 {
+  padding: 2rem 0rem;
+}
+.burger-nav-links {
+  /* flex-basis: 15rem; */
+}
+.contact {
+  width: 100%;
+  text-align: center;
+}
 
-@media only screen and (max-width: 800px) {
+.contact .social_icons img {
+  height: 2.5rem;
+  margin: 1rem 2rem;
+}
+.contact h2 {
+  font-size: 3rem;
+  padding: 2rem 0rem;
+}
+.contact p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media only screen and (max-width: 815px) {
+  .nav-links {
+    display: none;
+  }
+  .burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+  }
+  section.banner {
+    transform: translateY(12%);
+  }
+
   .internal_navigation::before {
     opacity: 0;
+  }
+  .internal_navigation {
+    height: 60%;
+    top: 30%;
   }
   /*Line - BAR */
   .internal_navigation .nav_home li::before {
     width: 5px;
     height: 5px;
     border-radius: 30px;
+  }
+  .internal_navigation .nav_home li {
+    margin: 0 0 0.5rem;
+    padding: 0.5rem 0;
   }
 }
 
@@ -774,16 +850,19 @@ p.job-desc {
     will-change: opacity;
   }
   .internal_navigation .nav_home li::before {
-    width: 7px;
-    height: 7px;
-    border-radius: 20px;
-    position: absolute;
-    right: auto;
-    top: -3rem;
-    transform: translateY(-5rem);
-    -webkit-transform: translateY(-5rem);
-    transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
+    display: none;
+  }
+  .internal_navigation .nav_home li a .hide_info {
+    font-size: 0.5rem;
+    /* font-weight: 100; */
+    opacity: 1;
+  }
+  .internal_navigation .nav_home li.active a .hide_info {
+    opacity: 1;
+    font-size: larger;
+  }
+  .internal_navigation .nav_home li a:hover .hide_info {
+    font-weight: 400;
   }
 
   .internal_navigation .nav_home {
@@ -796,6 +875,7 @@ p.job-desc {
     width: 95%;
     left: auto;
     margin: 0 1rem;
+    overflow-x: hidden;
   }
   section {
     width: auto;
@@ -810,6 +890,8 @@ p.job-desc {
   .half {
     width: 100% !important;
   }
+
+  /* HOME */
 
   .welcome {
     /* display: none; */
@@ -847,7 +929,6 @@ p.job-desc {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: space-between; */
     margin: 2rem 0 2rem 0;
     overflow-y: hidden;
   }
@@ -861,14 +942,100 @@ p.job-desc {
     margin: auto;
   }
   .about-text {
+    width: 90%;
+    margin: 0 0 0 1rem;
     position: relative;
     top: -2rem;
     font-size: 0.8rem;
-  }
   }
 
   .about-heading .picture img {
     opacity: 0.9;
     width: 60%;
+  }
+
+  /* EXPERIENCE */
+
+  .experience-wrapper .heading {
+    font-weight: 100;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    margin: 1rem 1rem;
+  }
+  .li-job #bullet {
+    display: none;
+  }
+  .li-job::before {
+    display: none;
+  }
+
+  .timeline .li-job + div {
+    width: 100%;
+    margin: 3rem 0rem;
+  }
+  .direction-l,
+  .direction-r {
+    width: 90%;
+  }
+  .desc p {
+    font-size: 0.8rem;
+  }
+  .desc span {
+    margin: 0.5rem 0rem;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bolder;
+  }
+
+  .direction-l .desc span {
+    position: absolute;
+    right: 0;
+  }
+  .direction-r .desc span {
+    position: absolute;
+    left: 0;
+  }
+
+  /* SKILLS */
+  .skills-heading {
+    width: 90%;
+    margin: 1rem 1rem;
+  }
+  .skills-heading span {
+    font-weight: 100;
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+  }
+
+  .skills-content {
+    height: 60vh;
+    margin: 2rem 1rem 3rem 1rem;
+  }
+
+  .skills-logo li {
+    margin: 1rem 1rem;
+  }
+
+  .skills-logo li .logo-holder {
+    height: auto;
+    max-width: 80px;
+    text-align: center;
+  }
+  .logo-holder img {
+    width: 50px;
+  }
+
+  .skills-logo li .text-holder {
+    text-align: center;
+  }
+
+  .skills-logo li span {
+    font-size: 0.8rem;
+    text-align: center;
+    margin: 0.5rem 0rem;
+  }
+
+  .content_social_fixed {
+    opacity: 0;
   }
 }
