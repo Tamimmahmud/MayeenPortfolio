@@ -99,99 +99,44 @@ function animateSlides() {
 
 }
 
+// animateSlides()
 
-
-
-function navToggle(e) {
-    console.log(e.target)
-    if(!e.target.classList.contains('active')){
-        e.target.classList.add('active');
-        gsap.to(".line1",0.5,{rotate : "45", y: "5", background: 'black'});
-        gsap.to(".line2",0.5,{rotate: "-45",y: "-5", background: 'black'})
-        gsap.to("#logo",1,{color:'black'});
-        gsap.to(".burger-nav-bar", 1, {clipPath: "circle(2500px at 100% -10%)"})
-        document.body.classList.add('hide')
-
-    }
-    else{
-        e.target.classList.remove('active');
-        gsap.to(".line1",0.5,{rotate : "0", y: "0", background: 'white'});
-        gsap.to(".line2",0.5,{rotate: "0",y: "0", background: 'white'});
-        gsap.to("#logo",1,{color:'white'});
-        gsap.to(".burger-nav-bar", 1, {clipPath: "circle(50px at 100% -10%)"}) 
-        document.body.classList.remove('hide')
-    }
-    
-}
-
-
-
-// animateSlides();
-
-// window.addEventListener('mousemove', cursor);
-// window.addEventListener('mouseover', activeCursor);
-
+// INTERNAL NAVBAR Active class toggle on SCROLL
 
 const homeHeight = document.querySelector('#home').clientHeight;
 const aboutHeight= document.querySelector('#about').clientHeight;
-const experienceHeight=  document.querySelector('#experience').clientHeight;;
+const experienceHeight=  document.querySelector('#experience').clientHeight;
 const skillsHeight= document.querySelector('#skills').clientHeight;;
 
-// INTERNAL NAVBAR Active class toggle on SCROLL
-function urlChange() {
+
+function toggleActiveOnScroll() {
         // init controller
 	let controller = new ScrollMagic.Controller();
-
 	// build scenes
 	new ScrollMagic.Scene({
         triggerElement: "#home",
         duration:homeHeight})
-        // .removeClassToggle("#liAbout, #liExperience, #liSkills", "active")
 		.setClassToggle("#liHome", "active") // add class toggle			
         // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
 	new ScrollMagic.Scene({
         triggerElement: "#about",
         duration:aboutHeight})
-        // .removeClassToggle("#liHome, #liExperience, #liSkills", "active")
 		.setClassToggle("#liAbout", "active") // add class toggle
 		// .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
-	new ScrollMagic.Scene({triggerElement: "#experience", duration:experienceHeight })
-	    // .removeClassToggle("#liHome, #liAbout, #liSkills", "active")				
+	new ScrollMagic.Scene({triggerElement: "#experience", duration:experienceHeight })		
         .setClassToggle("#liExperience", "active") // add class toggle    
         // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
-	new ScrollMagic.Scene({triggerElement: "#skills",duration:skillsHeight})
-	    // .removeClassToggle("#liHome, #liExperience, #liAbout", "active")				
+	new ScrollMagic.Scene({triggerElement: "#skills",duration:skillsHeight})		
         .setClassToggle("#liSkills", "active") // add class toggle
         // .addIndicators() // add indicators (requires plugin)
 		.addTo(controller);
     
 }
 
-urlChange()
-
-// HomePage SideNavbar active toggle
-
-const internal_navLinks = document.querySelectorAll('.internal_navigation .nav_home li')
-const navLink_a = document.querySelectorAll('.internal_navigation .nav_home li a')
-
-function navChange(e) {
-    const internal_link = e.target;
-    const target_li = internal_link.parentElement;
-    console.log(target_li);
-    // const internal_navLinks_active = document.querySelectorAll('.internal_navigation .nav_home li')
-    // console.log(internal_navLinks_active);
-    // internal_navLinks.forEach((navLink) => navLink.classList.remove('active'))
-    // target_li.classList.toggle('active');
-    // const sectionURL = link.dataset.section;
-    // history.pushState({},(''),sectionURL)
-}
-
-navLink_a.forEach((link) => {
-    link.addEventListener('click', navChange)
-})
+toggleActiveOnScroll()
 
 // TOP header translateY on Scroll Direction
 
@@ -216,9 +161,10 @@ let scrollableElement = document.body;
 scrollableElement.addEventListener('wheel', checkScrollDirection);
 
 
+// Mobile - header Burger active toggle
 
-
-function navToggle(e) {
+const burger = document.querySelector(".burger");
+function burgerToggle(e) {
     if (!e.target.classList.contains("active")) {
       e.target.classList.add("active");
       gsap.to(".line1", 0.5, { rotate: "45", y: 6, background: "black" });
@@ -242,5 +188,5 @@ function navToggle(e) {
     }
   }
 
-  const burger = document.querySelector(".burger");
-  burger.addEventListener("click", navToggle);
+
+  burger.addEventListener("click", burgerToggle);
