@@ -1,0 +1,92 @@
+body {
+  background: #fff;
+}
+
+.line1,
+.line2 {
+  background-color: #000;
+}
+
+.nav-links h2 {
+  color: #000;
+
+  font-weight: bolder;
+}
+
+#logo img {
+  width: 25%;
+}
+
+main.projects {
+  position: relative;
+  top: 25vh;
+  width: 100%;
+  background-color: #fff;
+  left: auto;
+}
+
+section {
+  width: 85%;
+}
+section.project_brief {
+  color: #000;
+}
+
+.project_heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project_title h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 1rem;
+}
+
+.project_desc {
+  width: 40%;
+}
+.project_display img {
+  width: 100%;
+}
+
+.project_details {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* width: 95%; */
+}
+
+.column_content {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.column_content div {
+  display: flex;
+  padding: 1rem 2rem;
+}
+
+.column_content div span {
+  width: 30%;
+}
+.column_content div span:nth-child(2) {
+  /* opacity: 0.5; */
+  font-weight: 900;
+  width: 50%;
+}
+.column_content div span {
+  width: 50%;
+}
+
+.seeFullWork {
+  position: absolute;
+  width: 40%;
+  right: 0;
+  height: 4rem;
+  background-color: #0f7a9c;
+  color: #fff;
+}
