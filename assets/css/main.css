@@ -11,7 +11,7 @@
 
 body {
   background: #000;
-  font-family: "Poppins", sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
   overflow-x: hidden;
   position: relative;
 }
@@ -45,7 +45,7 @@ header {
 
 .nav-links h2 {
   padding: 1rem;
-  font-family: "Poppins";
+  font-family: "Source Sans Pro", "Poppins";
   font-weight: lighter;
   font-size: 1rem;
   letter-spacing: 0.5rem;
