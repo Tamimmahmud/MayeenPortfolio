@@ -28,8 +28,13 @@ main.projects {
 section {
   width: 85%;
 }
+
 section.project_brief {
   color: #000;
+}
+
+section.project_brief > div {
+  margin: 3rem 0rem;
 }
 
 .project_heading {
@@ -39,14 +44,16 @@ section.project_brief {
 }
 
 .project_title h1 {
-  font-size: 2.5rem;
+  font-size: 4em;
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 100;
   letter-spacing: 1rem;
 }
 
 .project_desc {
-  width: 40%;
+  color: rgb(100, 100, 100);
+  font-size: 1.5em;
+  /* width: 40%; */
 }
 .project_display img {
   width: 100%;
@@ -62,7 +69,7 @@ section.project_brief {
 .column_content {
   display: flex;
   flex-direction: column;
-  width: 30%;
+  /* width: 30%; */
 }
 
 .column_content div {
@@ -84,9 +91,24 @@ section.project_brief {
 
 .seeFullWork {
   position: absolute;
-  width: 40%;
-  right: 0;
+  /* width: 40%; */
+  top: 30%;
+  right: -30%;
   height: 4rem;
+  justify-content: center;
   background-color: #0f7a9c;
   color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.seeFullWork span {
+}
+
+@media only screen and (max-width: 450px) {
+  .seeFullWork {
+    position: relative;
+  }
 }
