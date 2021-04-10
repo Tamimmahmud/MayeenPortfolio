@@ -151,6 +151,12 @@ section.userFlow {
 section.wireFrame,
 .wireFrame_content > div {
   padding: 2rem 0rem;
+  display: flex;
+  align-items: center;
+}
+
+.wireFrame_content > div {
+  margin: 0rem 0rem;
 }
 
 .sketch,
@@ -158,15 +164,26 @@ section.wireFrame,
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0rem;
+  margin: 2rem 0rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
 }
 
-.sketch img,
+.sketch .img img,
+.wire_Frame .img img {
+  object-fit: cover;
+  max-height: 100%;
+  max-width: 90%;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.25);
+}
+.sketch .span,
+.wire_Frame .span {
+  margin: 1rem 0rem;
+}
+
 .wire_Frame img {
-  width: 50%;
-  padding: 2rem;
 }
-
 @media only screen and (max-width: 450px) {
   .seeFullWork {
     position: relative;
@@ -178,5 +195,14 @@ section.wireFrame,
   }
   main.projects {
     margin: auto;
+  }
+  .sketch img,
+  .wire_Frame img {
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .sketch img,
+  .wire_Frame img {
   }
 }

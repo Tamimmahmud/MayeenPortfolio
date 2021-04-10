@@ -52,6 +52,10 @@ header {
   text-transform: uppercase;
   color: white;
 }
+.nav-links h2 a:visited {
+  text-decoration: none;
+  color: white;
+}
 
 .burger {
   display: none;
@@ -773,6 +777,7 @@ p.job-desc {
 .burger-nav-links {
   /* flex-basis: 15rem; */
 }
+
 .contact {
   width: 100%;
   text-align: center;
