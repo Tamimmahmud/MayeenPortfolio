@@ -3,9 +3,9 @@
 const header = document.querySelector("header");
 function checkScrollDirection(event) {
   if (checkScrollDirectionIsUp(event)) {
-    header.style.transform = "translateY(0.5rem)";
+    header.style.transform = "translateY(0rem)";
   } else {
-    header.style.transform = "translateY(-12rem)";
+    header.style.transform = "translateY(-20vh)";
   }
 }
 

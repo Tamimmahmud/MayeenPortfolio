@@ -28,7 +28,7 @@ header {
   /* background-color: black; */
   width: 100%;
   margin: auto;
-  padding: 2rem 2rem;
+  padding: 1.5rem 2rem;
   z-index: 2;
   transition: all 1s ease-in-out;
   -webkit-transition: all 1s ease-in-out;
@@ -774,8 +774,9 @@ p.job-desc {
 .burger-nav-links h3 {
   padding: 2rem 0rem;
 }
-.burger-nav-links {
-  /* flex-basis: 15rem; */
+.burger-nav-links h3 a,
+.burger-nav-links h3 a:visited {
+  color: black;
 }
 
 .contact {

@@ -1,6 +1,10 @@
 body {
   background: #fff;
 }
+body p {
+  padding: 1.5rem 0rem;
+  font-size: 1.2rem;
+}
 
 .line1,
 .line2 {
@@ -14,7 +18,11 @@ body {
 }
 
 #logo img {
-  width: 35%;
+  width: 25%;
+}
+
+header {
+  background-color: white;
 }
 
 main.projects {
@@ -26,13 +34,13 @@ main.projects {
   overflow-x: hidden;
 }
 
-section {
-  /* width: 85%; */
+main section {
+  margin: auto !important;
+  padding: 2rem 0rem !important;
 }
 
 section.project_brief,
-section.wireFrame,
-section.styling {
+section.wireFrame {
   color: #000;
 }
 
@@ -183,6 +191,12 @@ section.wireFrame,
 }
 
 /* STYLE GUIDES SECTION */
+section.styling {
+  width: 100vw;
+  background-color: #0f7a9c;
+  padding: 2rem 0rem;
+  color: white;
+}
 
 .sGuide {
   max-width: 60%;
@@ -262,6 +276,38 @@ section.wireFrame,
   width: auto !important;
 }
 
+/*  TESTIMONIALS */
+section.feedback {
+  width: 100vw;
+  background-color: #e0fbfc;
+  padding: 2rem 0rem;
+  color: #000;
+}
+.fback > div {
+  padding: 2rem 0rem;
+  margin: 3rem 0rem;
+}
+
+.fback_div_heading h3::after {
+  content: "";
+  display: block;
+  margin-top: 1rem;
+  width: 20%;
+  height: 5px;
+  background-color: #000;
+}
+
+.fback_div_content ol li p {
+  padding: 1.5rem 0rem;
+  font-size: 1.2rem;
+}
+
+/* Project Sample */
+section.projectSample {
+  width: 100vw;
+  background-color: #0f7a9c;
+}
+
 @media only screen and (max-width: 450px) {
   .seeFullWork {
     position: relative;
@@ -273,6 +319,9 @@ section.wireFrame,
   }
   main.projects {
     margin: auto;
+  }
+  .sGuide {
+    max-width: 90%;
   }
 }
 
