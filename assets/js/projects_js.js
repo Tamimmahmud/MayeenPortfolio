@@ -1,3 +1,6 @@
+let controller;
+let imgScene;
+
 // TOP header translateY on Scroll Direction
 
 const header = document.querySelector("header");
@@ -48,3 +51,35 @@ function burgerToggle(e) {
 }
 
 burger.addEventListener("click", burgerToggle);
+
+function animateImg() {
+  let demoImg = document.querySelector(".demo_img");
+  let demoImgSection = document.querySelector("section.projectSample");
+  let wireFrameSection = document.querySelector("section.wireFrame");
+  controller = new ScrollMagic.Controller();
+
+  const imgMoveTl = new gsap.timeline({
+    defaults: { duration: 1.5, ease: "power2.inOut" },
+  });
+  const imgMoveTl2 = new gsap.timeline({
+    defaults: { duration: 1.5, ease: "power2.inOut" },
+  });
+  console.log(demoImg);
+  imgMoveTl.fromTo(demoImg, { top: "3rem" }, { top: "-3rem" });
+
+  imgScene = new ScrollMagic.Scene({
+    triggerElement: demoImg,
+    duration: "0%",
+    triggerHook: 0.5,
+  })
+    .setTween(imgMoveTl)
+    // INDICATORS HIDDEN
+    .addIndicators({
+      colorStart: "black",
+      colorTrigger: "black",
+      name: "demoImg",
+      // indent: 200
+    })
+    .addTo(controller);
+}
+animateImg();
