@@ -59,13 +59,13 @@ function animateImg() {
   controller = new ScrollMagic.Controller();
 
   const imgMoveTl = new gsap.timeline({
-    defaults: { duration: 1.5, ease: "power2.inOut" },
+    defaults: { duration: 2, ease: "power2.inOut" },
   });
   const imgMoveTl2 = new gsap.timeline({
     defaults: { duration: 1.5, ease: "power2.inOut" },
   });
   console.log(demoImg);
-  imgMoveTl.fromTo(demoImg, { top: "3rem" }, { top: "-3rem" });
+  imgMoveTl.fromTo(demoImg, { top: "2rem" }, { top: "-3rem" });
 
   imgScene = new ScrollMagic.Scene({
     triggerElement: demoImg,
@@ -74,12 +74,12 @@ function animateImg() {
   })
     .setTween(imgMoveTl)
     // INDICATORS HIDDEN
-    .addIndicators({
-      colorStart: "black",
-      colorTrigger: "black",
-      name: "demoImg",
-      // indent: 200
-    })
+    // .addIndicators({
+    //   colorStart: "black",
+    //   colorTrigger: "black",
+    //   name: "demoImg",
+    //   // indent: 200
+    // })
     .addTo(controller);
 }
 animateImg();
