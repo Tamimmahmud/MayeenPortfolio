@@ -843,9 +843,9 @@ p.job-desc {
     height: 90px;
     background: black;
     /* overflow: hidden; */
-    position: fixed;
+    position: fixed !important;
     left: 0;
-    bottom: 0 !important;
+    bottom: 0;
     top: unset;
     z-index: 6;
     display: flex;

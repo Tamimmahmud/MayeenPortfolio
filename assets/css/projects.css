@@ -2,8 +2,8 @@ body {
   background: #fff;
 }
 body p {
-  padding: 1.5rem 0rem;
-  font-size: 1.2rem;
+  padding: 0.5rem 0rem;
+  font-size: 1rem;
 }
 
 .line1,
@@ -37,6 +37,7 @@ main.projects {
 main section {
   margin: auto !important;
   padding: 2rem 6rem !important;
+  overflow-y: hidden;
 }
 
 section.project_brief,
@@ -118,8 +119,8 @@ section.project_brief > div {
 .seeFullWork span {
 }
 
-.overview_heading h3::after,
-.story_heading h3::after {
+.overview_heading h5::after,
+.story_heading h5::after {
   content: "";
   display: block;
   margin-top: 1rem;
@@ -137,7 +138,7 @@ section.project_brief > div {
 section.userFlow {
   width: 100vw;
   background-color: #0f7a9c;
-  padding: 2rem 6rem;
+  /* padding: 2rem 6rem; */
 }
 .userFlowContainer > div {
   padding: 2rem 2rem;
@@ -194,7 +195,7 @@ section.wireFrame,
 section.styling {
   width: 100vw;
   background-color: #e0fbfc;
-  padding: 2rem 0rem;
+  /* padding: 2rem 0rem; */
   color: black;
 }
 
@@ -202,14 +203,14 @@ section.styling {
   max-width: 60%;
 }
 
-.sGuide h3 {
-  margin: 1rem 0rem;
+.sGuide h4 {
+  margin: 0.5rem 0rem;
 }
 
-.sGuide h3::after {
+.sGuide h4::after {
   content: "";
   margin-top: 0.5rem;
-  width: 5rem;
+  width: 4rem;
   height: 0.3rem;
   background-color: #000;
   display: block;
@@ -289,7 +290,7 @@ section.feedback {
   margin: 3rem 0rem;
 }
 
-.fback_div_heading h3::after {
+.fback_div_heading h5::after {
   content: "";
   display: block;
   margin-top: 1rem;
@@ -299,7 +300,8 @@ section.feedback {
 }
 
 .fback_div_content ol li p {
-  padding: 1.5rem 0rem;
+  padding: 0.5rem 0rem;
+  height: 8rem;
   font-size: 1.2rem;
 }
 .fback_div_content ol {
@@ -318,7 +320,16 @@ section.projectSample {
   position: relative;
 }
 
+@media only screen and (max-width: 767px) {
+  main section {
+    padding: 2rem !important;
+  }
+}
+
 @media only screen and (max-width: 450px) {
+  main section {
+    padding: 0rem !important;
+  }
   .seeFullWork {
     position: relative;
     right: 0;
@@ -333,7 +344,4 @@ section.projectSample {
   .sGuide {
     max-width: 90%;
   }
-}
-
-@media only screen and (max-width: 767px) {
 }
