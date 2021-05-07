@@ -13,12 +13,26 @@ body p {
 
 .nav-links h2 {
   color: #000;
-
   font-weight: bolder;
 }
+.nav-links h2 a {
+  color: #000;
+  font-weight: bolder;
+}
+.nav-links h2 a:visited {
+  text-decoration: none;
+  color: #000;
+}
 
-#logo img {
-  width: 25%;
+.nav-links h2 a#projects::after {
+  content: "";
+  display: block;
+  align-self: center;
+  margin-top: 0.8rem;
+  width: 90%;
+  height: 1.5px;
+  border-radius: 0.5px;
+  background-color: #000;
 }
 
 header {
@@ -117,6 +131,14 @@ section.project_brief > div {
 }
 
 .seeFullWork span {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.seeFullWork span a,
+.seeFullWork span a:visited {
+  text-decoration: none;
+  color: #fff;
 }
 
 .overview_heading h5::after,
@@ -327,6 +349,12 @@ section.projectSample {
 @media only screen and (max-width: 767px) {
   main section {
     padding: 2rem !important;
+  }
+  .seeFullWork {
+    position: unset;
+    /* width: 40%; */
+    top: unset;
+    right: unset;
   }
 }
 

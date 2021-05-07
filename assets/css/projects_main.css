@@ -2,16 +2,27 @@
   /* height: 90vh;
   top: 15%; */
 }
+.nav-links h2 a#projects::after {
+  content: "";
+  display: block;
+  align-self: center;
+  margin-top: 0.8rem;
+  width: 90%;
+  height: 1.5px;
+  border-radius: 0.5px;
+  background-color: #fff;
+}
 
 .wrapper {
   position: relative;
-  top: 5rem;
-  height: 80vh;
+  top: 8vh;
+  height: 90vh;
   justify-content: center;
   align-items: center;
 }
 
 .img-container {
+  position: relative;
   display: flex;
   justify-content: center;
   padding: 5rem 0rem;
@@ -20,13 +31,29 @@
   height: fit-content;
 }
 
-.img-container img {
-  padding: 0rem 1rem;
-  width: inherit;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-  /* box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25); */
+.img-container a {
+  display: block;
+  width: 100%;
+}
+.img-container a:hover {
+  width: 105%;
 }
 
+.img-container a img {
+  padding: 0rem 1.5rem;
+  width: inherit;
+  max-width: 1200px;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.img-container img:hover,
+.img-container img:focus {
+  padding: 0rem 0rem;
+}
+
+.img-container svg {
+}
 @media only screen and (max-width: 450px) {
   .internal_navigation {
     width: 100%;

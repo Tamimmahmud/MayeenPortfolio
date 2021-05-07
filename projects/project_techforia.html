@@ -23,9 +23,10 @@
 
 <body>
     <header class="nav-header">
-        <h1><a href="/index.html" id="logo"><img src="../assets/images/LogoWhiteBg.png"></a></h1>
+        <div class="nav-header-logo"><a href="/index.html" id="logo"><img src="../assets/images/LogoWhiteBg.png"></a>
+        </div>
         <div class="nav-links">
-            <h2><a id="projects" href="/projects/projects.html">Projects</a></h2>
+            <h2><a id="projects" href="./projects.html">Projects</a></h2>
             <h2><a id="photography" href="">Photography</a></h2>
         </div>
         <div class="burger">
@@ -79,11 +80,11 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-8 col-sm-12 seeFullWork">
-                    <span>See Full Work</span>
+                    <span><a href="#project_overview">See Full Work</a></span>
                 </div>
             </div>
 
-            <div class="row project_overview">
+            <div id="project_overview" class="row project_overview">
                 <div id="project_objective" class="col-lg-6 col-md-12">
                     <div class="overview_heading">
                         <h5>Objective</h5>
@@ -387,7 +388,7 @@
     <nav class="burger-nav-bar">
         <div class="wrapper">
             <ul class="burger-nav-links">
-                <h3>Projects</h3>
+                <h3><a href="./projects.html">Projects</a></h3>
                 <h3>Photography</h3>
             </ul>
             <div class="contact">
