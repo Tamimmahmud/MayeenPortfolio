@@ -2,6 +2,14 @@
   /* height: 90vh;
   top: 15%; */
 }
+.internal_navigation .nav_home {
+  margin-top: 2rem;
+}
+
+.internal_navigation .nav_home li {
+  margin: 0;
+  padding: 1rem 0rem;
+}
 .nav-links h2 a#projects::after {
   content: "";
   display: block;
@@ -28,7 +36,70 @@
   padding: 5rem 0rem;
   align-items: center;
   width: 100%;
-  height: fit-content;
+  height: inherit;
+}
+#techforia.img-container {
+  display: flex;
+  flex-direction: row;
+}
+.proj_brief_img {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+}
+
+.proj_brief_content {
+  color: white;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 1rem;
+  position: relative;
+}
+.proj_brief_content h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #6fbdd4;
+}
+
+.proj_brief_content a {
+  /* margin: 2rem 0rem;  */
+}
+.proj_brief_content > * {
+  margin: 0.5rem 0rem;
+}
+
+.proj_brief_content a,
+.proj_brief_content a:visited {
+  color: white;
+  text-decoration: none;
+}
+#techforia.img-container .proj_brief_img {
+  display: flex;
+  flex-direction: column;
+}
+
+#techforia.img-container .proj_brief_img img {
+  width: 100%;
+  max-width: 1200px;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  transition: all 0.2s ease-in-out;
+}
+#techforia.img-container .proj_brief_img a {
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#techforia.img-container .proj_brief_img a .redirect_btn {
+  border: solid 2px white;
+  width: fit-content;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
 }
 
 .img-container a {
@@ -47,13 +118,10 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 }
-.img-container img:hover,
-.img-container img:focus {
+.img-container img:hover {
   padding: 0rem 0rem;
 }
 
-.img-container svg {
-}
 @media only screen and (max-width: 450px) {
   .internal_navigation {
     width: 100%;
@@ -64,6 +132,9 @@
     left: 0;
     bottom: 0 !important;
     top: unset;
+  }
+  .internal_navigation .nav_home {
+    margin-top: unset;
   }
 
   main {

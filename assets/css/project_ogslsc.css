@@ -6,6 +6,8 @@ body p {
   font-size: 1rem;
 }
 
+/*  NAV */
+
 .line1,
 .line2 {
   background-color: #000;
@@ -122,7 +124,7 @@ section.project_brief > div {
   right: -30%;
   height: 4rem;
   justify-content: center;
-  background-color: #0f7a9c;
+  background-color: #e5865c;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -148,12 +150,30 @@ section.project_brief > div {
   margin-top: 1rem;
   width: 20%;
   height: 5px;
-  background-color: #6fbdd4;
+  background-color: #f6e710;
 }
 
 .overview_desc,
 .story_desc {
   height: 50%;
+}
+
+.tile {
+  border: 1px solid black;
+  border-radius: 1rem;
+  /* height: 28rem; */
+  padding: 1rem 1.5rem;
+  margin: 1rem;
+  position: relative;
+}
+#project_user_research .overview_desc {
+  padding: 4rem 0rem 0rem 2rem;
+}
+
+.tile#club_members::before {
+  content: url(/assets/images/proj_ogslsc/club_members_logo.png);
+  position: absolute;
+  top: 0;
 }
 
 /* USER FLOW  */

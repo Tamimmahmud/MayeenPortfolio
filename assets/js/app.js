@@ -188,9 +188,14 @@ function burgerToggle(e) {
     gsap.to(".line1", 0.5, { rotate: "45", y: 6, background: "black" });
     gsap.to(".line2", 0.5, { rotate: "-45", y: 0, background: "black" });
     gsap.to("#logo", 1, { color: "black" });
+
     gsap.to(".burger-nav-bar", 0.5, {
       clipPath: "circle(2500px at 100% -10%)",
     });
+    gsap.set("#logoImg", {
+      attr: { src: "../assets/images/LogoWhiteBg.png" },
+    });
+
     gsap.to(".internal_navigation", { transform: "translateY(100px)" });
     document.querySelector(".content_social_fixed").classList.toggle("show");
     document.querySelector(".content_social_fixed").classList.toggle("hide");
@@ -205,6 +210,9 @@ function burgerToggle(e) {
     document.querySelector(".content_social_fixed").classList.toggle("show");
     document.querySelector(".content_social_fixed").classList.toggle("hide");
     document.body.classList.remove("hide");
+    gsap.set("#logoImg", {
+      attr: { src: "../assets/images/LogoDarkBg.png" },
+    });
   }
 }
 
