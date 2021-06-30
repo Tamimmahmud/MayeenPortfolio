@@ -163,18 +163,28 @@ section.project_brief > div {
   border-radius: 1rem;
   /* height: 28rem; */
   padding: 1rem 1.5rem;
-  margin: 1rem;
+  margin: 2.2rem 0.5rem;
   position: relative;
 }
 #project_user_research .overview_desc {
   padding: 4rem 0rem 0rem 2rem;
 }
 
-.tile#club_members::before {
+.tile .card-logo {
+  width: fit-content;
+  position: relative;
+  top: -4rem;
+  margin: 0;
+  background-color: #fff;
+}
+
+.tile .card-logo img {
+}
+/* .tile#club_members::before {
   content: url(/assets/images/proj_ogslsc/club_members_logo.png);
   position: absolute;
   top: 0;
-}
+} */
 
 /* USER FLOW  */
 section.userFlow {
